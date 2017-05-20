@@ -31,8 +31,8 @@ if __name__ == '__main__':
                       learning_rate=1e-3,
                       sample_length=sample_length)
 
-    should_train = False
-    should_vis = True
+    should_train = True
+    should_vis = False
 
     if should_train:
         operations.train(model,

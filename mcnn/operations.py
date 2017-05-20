@@ -6,12 +6,9 @@ import numpy as np
 import itertools
 
 import matplotlib.pyplot as plt
-import matplotlib.cm as cm
 
 from mcnn.model import McnnModel
 from mcnn.samples import Dataset
-from cnnvis.deconv import Deconvolutionizer
-from cnnvis.visualization import ReconstructionImageVisualizer
 
 
 def _evaluate_batch(session: tf.Session, model: McnnModel, input: np.ndarray, labels: np.ndarray):
@@ -64,6 +61,7 @@ def train(model: McnnModel, dataset: Dataset, step_count: int, checkpoint_dir: P
 
 
 def deconv(model: McnnModel, dataset: Dataset, sample_count: int, checkpoint_dir: Path, feature_name: str):
+    from cnnvis.deconv import Deconvolutionizer
 
     with tf.Session() as session:
 
